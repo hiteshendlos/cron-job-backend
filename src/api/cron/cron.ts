@@ -5,7 +5,7 @@ const axios = require('axios');
 
 
 export default function cronJob() {
-  cron.schedule('*/5 * * * *', async () => {
+  cron.schedule('*/10 * * * *', async () => {
     console.log('This message will be logged every min');
 
     await axios.get(config.emailweburl)
