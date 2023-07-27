@@ -5,7 +5,7 @@ const axios = require('axios');
 
 
 export default function cronJob() {
-  cron.schedule('*/20 * * * * *', async () => {
+  cron.schedule('*/20 * * * * * *', async () => {
     console.log('This message will be logged every min');
 
   
