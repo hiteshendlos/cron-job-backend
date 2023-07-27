@@ -20,6 +20,11 @@ export default {
    */
   emailweburl:process.env.EMAILWEB,
 
+  /**
+   * Slack webhhok 
+   */
+  slackwebhookurl:process.env.SLACK_WEBHOOK_URL,
+
 
   /**
    * API configs

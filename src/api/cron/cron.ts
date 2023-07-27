@@ -5,20 +5,44 @@ const axios = require('axios');
 
 
 export default function cronJob() {
-  cron.schedule('*/10 * * * *', async () => {
+  cron.schedule('*/20 * * * * *', async () => {
     console.log('This message will be logged every min');
 
-    await axios.get(config.emailweburl)
-    .then(response => {
+  
 
-        console.log("successfully api done");
-      // Handle the successful response
-      console.log(response.data);
+      
+
+
+
+
+
+     axios.get(config.emailweburl)
+    .then(async (response) => {
+
+      const data ={
+        text:JSON.stringify(response?.data)
+      }
+
+
+       axios.post(config.slackwebhookurl, data, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+    
+
+
     })
     .catch(error => {
       // Handle the error
       console.error(error);
     });
+
+
+
+
+    
+
   });
   
   
