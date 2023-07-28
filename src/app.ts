@@ -34,7 +34,7 @@ async function startServer() {
   app.use(config.api.prefix, routes());
 
   app.listen(config.port, () => {
-    console.log("App is working on Port", config.port);
+    console.log("Ci cd App is working on Port", config.port);
   });
 }
 

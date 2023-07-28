@@ -1,7 +1,7 @@
 version: "3"
 services:
-  cron-job:
-    container_name: cron-job
+  ci-cd:
+    container_name: ci-cd
     build:
       context: .
       dockerfile: ./Dockerfile
